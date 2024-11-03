@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="j2.css">
+  <title>Types of Modeling</title>
+</head>
+<body>
+
+  <!-- Page Header -->
+  <header>
+    <h1>Explore the Types of Modeling Careers</h1>
+    <p>Dive into the diverse paths in the modeling industry, each offering unique opportunities and experiences.</p>
+  </header>
+
+  <!-- Modeling Categories Section -->
+  <section class="modeling-types">
+
+    <!-- Each category will have a collapsible section -->
+    <div class="category">
+      <button class="category-btn" onclick="toggleContent('fashion')">
+        Fashion Modeling
+      </button>
+      <div class="category-content" id="fashion">
+        <p>Fashion models showcase designer clothing, often in high-fashion settings like runways and photo shoots.</p>
+      </div>
+    </div>
+
+    <div class="category">
+      <button class="category-btn" onclick="toggleContent('runway')">
+        Runway Modeling
+      </button>
+      <div class="category-content" id="runway">
+        <p>Runway models display clothing on the catwalk, showcasing collections to buyers and media.</p>
+      </div>
+    </div>
+
+    <div class="category">
+      <button class="category-btn" onclick="toggleContent('commercial')">
+        Commercial Modeling
+      </button>
+      <div class="category-content" id="commercial">
+        <p>Commercial models appear in advertisements, working for clients across various industries.</p>
+      </div>
+    </div>
+
+    <!-- Add additional modeling types as needed -->
+
+  </section>
+
+  <script>
+function toggleContent(id) {
+  const content = document.getElementById(id);
+  content.style.display = content.style.display === "block" ? "none" : "block";
+}
+  </script>
+</body>
+</html>
