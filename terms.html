@@ -3,151 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Terms & Conditions</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <style>       
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            color: #111;
-            background-color: #121212;
-            line-height: 1.6;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        header.hero-terms {
-            background: url('terms-background.jpg') no-repeat center center/cover;
-            color: #fff;
-            padding: 100px 0;
-            position: relative;
-            text-align: center;
-        }
+    body {
+    font-family: 'poppins', sans-serif;
+    color: #111;
+    background-color: #111;
+    line-height: 1.6;
+}
 
-        header.hero-terms .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-        }
+    header.hero-terms {
+    background: url('https://gsts.ca/resources/terms-conditions/') no-repeat center center/cover;
+    color: #fff;
+    padding: 100px 0;
+    position: relative;
+    text-align: center;
+}
 
-        header.hero-terms .hero-content {
-            position: relative;
-            z-index: 1;
-        }
+    header.hero-terms .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #111;
+}
 
-        header.hero-terms h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
+    header.hero-terms .hero-content {
+    position: relative;
+    z-index: 1;
+}
 
-        header.hero-terms p {
-            font-size: 1.2rem;
-            font-weight: 300;
-        }
+    header.hero-terms h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    header.hero-terms p {
+    font-size: 16px;
+    font-weight: 300;
+}
 
-        .terms-content h2 {
-            font-size: 1.8rem;
-            margin-top: 20px;
-            color: #fff;
-        }
+    .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1c1c1c;
+    border-radius: 20px;
+    animation: ascend 1s ease-in-out forwards;
+}
 
-        .terms-content p {
-            margin-top: 10px;
-            line-height: 1.8;
-            color: #fff;
-        }
+    .terms-content h2 {
+    font-size: 1.8rem;
+    margin-top: 20px;
+    color: #fff;
+}
 
-        .terms-content ul {
-            margin-top: 10px;
-            padding-left: 20px;
-        }
+    .terms-content p {
+    margin-top: 10px;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #fff;
+}
 
-        .terms-content ul li {
-            margin-bottom: 8px;
-            color: #fff;
-        }
-        
-        footer {
-        background-color: #111;
-        padding: 60px 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        }
+    .terms-content ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+    .terms-content ul li {
+    margin-bottom: 8px;
+    color: #fff;
+}
 
-        .footer-card {
-        background-color: #1c1c1c;
-        padding: 40px;
-        border-radius: 20px;
-        text-align: center;
-        width: 100%;
-        max-width: 900px;
-        color: #fff;
-        }
+footer {
+    background-color: #111;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        .footer-card h1 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 30px;
-        }
+.footer-card {
+    background-color: #1c1c1c;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+    color: #fff;
+}
 
-        .schedule-call {
-        display: inline-block;
-        background-color: #fff;
-        color: #000;
-        padding: 12px 25px;
-        border-radius: 50px;
-        font-size: 1.2rem;
-        text-decoration: none;
-        font-weight: bold;
-        margin-bottom: 40px;
-        transition: background-color 0.3s ease, color 0.3s ease;
-        }
+.footer-card h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    animation: ascend 1s ease-in-out forwards;
+}
 
-        .schedule-call:hover {
-            background-color: #111;
-            color: #fff;
-        }
+.schedule-call {
+    display: inline-block;
+    background-color: #fff;
+    color: #000;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    animation: ascend 1s ease-in-out forwards;
+    margin-bottom: 40px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-        .footer-nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
+.schedule-call:hover {
+    background-color: #111;
+    color: #fff;
+}
 
-        .footer-nav ul li {
-            margin: 0;
-        }
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+}
 
-        .footer-nav ul li a {
-            color: #a6a6a6;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-        }
+.footer-nav ul li {
+    margin: 0;
+}
 
-        .footer-nav ul li a:hover {
-            color: #ffffff;
-        }
+.footer-nav ul li a {
+    color: #a6a6a6;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
 
-        .footer-credits {
-            font-size: 0.9rem;
-            color: #8f8f8f;
-        }
+.footer-nav ul li a:hover {
+    color: #ffffff;
+}
 
+.footer-credits {
+    font-size: 0.9rem;
+    color: #8f8f8f;
+}
+
+@keyframes ascend {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
     </style>
 </head>
 <body>
@@ -197,17 +217,18 @@
         </div>
     </section>
 
+
     <footer>
         <div class="footer-card">
-            <h1>Let's create your next big Model.</h1>
-            <a href="blog1.html" class="schedule-call">Explore our blogs</a>
+            <h1>Shape Your Path to Stardom With Us!</h1>
+            <a href="contact.html" class="schedule-call">Schedule a call →</a>
             
             <nav class="footer-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
+                    <li><a href="blog1.html">Blog</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact us</a></li>
                     <li><a href="terms.html">Terms</a></li>
                 </ul>
             </nav>
@@ -215,5 +236,6 @@
             <p class="footer-credits">&copy; 2024 Nulllab. All Rights Reserved.</p>
         </div>
     </footer>
+
 </body>
 </html>

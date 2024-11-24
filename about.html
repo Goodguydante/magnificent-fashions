@@ -3,18 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <title>About Us</title>
     <style>
-        body {
-    font-family: '', sans-serif;
+
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+    body {
+    font-family: 'poppins', sans-serif;
     background-color: #111;
     color: #fff;
 }
 
 .hero-about {
     position: relative;
-    background: url('https://images.pexels.com/photos/13464942/pexels-photo-13464942.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
     height: 400px;
     display: flex;
     justify-content: center;
@@ -26,9 +36,9 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    width: 0;
+    height: 0;
+    background: #111;
 }
 
 .hero-about .hero-content {
@@ -47,8 +57,12 @@
 }
 
 .about-content {
-    padding: 60px 20px;
-    background-color: #222;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1c1c1c;
+    border-radius: 20px;
+    animation: ascend 1s ease-in-out forwards;
 }
 
 .about-content .container {
@@ -64,18 +78,19 @@
 }
 
 .about-content p {
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.8;
 }
 
 .about-content ul {
     list-style: none;
     padding: 0;
+    text-align: justify;
     margin-top: 20px;
 }
 
 .about-content ul li {
-    font-size: 18px;
+    font-size: 16px;
     margin: 10px 0;
     color: #ccc;
 }
@@ -106,6 +121,7 @@ footer {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 30px;
+    animation: ascend 1s ease-in-out forwards;
 }
 
 .schedule-call {
@@ -118,6 +134,7 @@ footer {
     text-decoration: none;
     font-weight: bold;
     margin-bottom: 40px;
+    animation: ascend 1s ease-in-out forwards;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -152,8 +169,25 @@ footer {
 .footer-credits {
     font-size: 0.9rem;
     color: #8f8f8f;
-    text-align: center;
 }
+
+@keyframes ascend {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+.blog-grid {
+  grid-template-columns: 1fr;
+}
+}
+
 
     </style>
 </head>
@@ -179,10 +213,10 @@ footer {
         
             <h2>Core Values</h2>
             <ul>
-                <li><strong>Authenticity:</strong> Staying true to our mission of sharing genuine stories and advice.</li>
-                <li><strong>Diversity:</strong> Celebrating all forms of beauty and creativity across cultures and perspectives.</li>
-                <li><strong>Empowerment:</strong> Equipping future models with the knowledge and confidence to succeed on their own terms.</li>
-                <li><strong>Community:</strong> Fostering a welcoming space where people can connect, share, and grow together.</li>
+                <li><strong>&#x2022; Authenticity:</strong> Staying true to our mission of sharing genuine stories and advice.</li>
+                <li><strong>&#x2022; Diversity:</strong> Celebrating all forms of beauty and creativity across cultures and perspectives.</li>
+                <li><strong>&#x2022; Empowerment:</strong> Equipping future models with the knowledge and confidence to succeed on their own terms.</li>
+                <li><strong>&#x2022; Community:</strong> Fostering a welcoming space where people can connect, share, and grow together.</li>
             </ul>
         </div>
     </section>
@@ -190,14 +224,14 @@ footer {
     <footer>
         <div class="footer-card">
             <h1>Let's create your next big Model.</h1>
-            <a href="blog1.html" class="schedule-call">Explore or blogs</a>
+            <a href="contact.html" class="schedule-call">Schedule a call →</a>
             
             <nav class="footer-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
+                    <li><a href="blog1.html">Blog</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact us</a></li>
                     <li><a href="terms.html">Terms</a></li>
                 </ul>
             </nav>
@@ -205,5 +239,6 @@ footer {
             <p class="footer-credits">&copy; 2024 Nulllab. All Rights Reserved.</p>
         </div>
     </footer>
+
 </body>
 </html>

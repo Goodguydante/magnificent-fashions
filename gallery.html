@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinterest-Style Model Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #fff;
+        }
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        .hero-gallery {
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-gallery::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-gallery h1 {
+            font-size: 48px;
+            z-index: 2;
+        }
+
+        .gallery-container {
+            column-count: 6;
+            column-gap: 20px;
+            padding: 20px;
+            max-width: max-content;
+            margin: 30px auto;
+        }
+
+        .gallery-container img {
+            width: 100%;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 20px;
+        }
+
+        .pagination button {
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #111;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .pagination button:hover {
+            background-color: #111;
+            color: #fff;
+        }
+
+        footer {
+    background-color: #111;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-card {
+    background-color: #1c1c1c;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+    color: #fff;
+}
+
+.footer-card h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.schedule-call {
+    display: inline-block;
+    background-color: #fff;
+    color: #000;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 40px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.schedule-call:hover {
+    background-color: #111;
+    color: #fff;
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.footer-nav ul li {
+    margin: 0;
+}
+
+.footer-nav ul li a {
+    color: #a6a6a6;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-nav ul li a:hover {
+    color: #ffffff;
+}
+
+.footer-credits {
+    font-size: 0.9rem;
+    color: #8f8f8f;
+}
+
+    @media (max-width: 768px) {
+    .gallery-container {
+    column-count: 2;
+            }
+        }
+
+    @media (max-width: 480px) {
+        .gallery-container {
+        column-count: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero-gallery">
+        <h1>Gallery</h1>
+    </header>
+
+    <section class="gallery-container" id="gallery"></section>
+
+    <div class="pagination">
+        <button onclick="loadImages('previous')">Previous Page</button>
+        <button onclick="loadImages('next')">Next Page</button>
+    </div>
+
+    <footer>
+        <div class="footer-card">
+            <h1>Let's create your next big Model.</h1>
+            <a href="contact.html" class="schedule-call">Schedule a call →</a>
+            
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog1.html">Blog</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                </ul>
+            </nav>
+            
+            <p class="footer-credits">&copy; 2024 Nulllab. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <script>
+const gallery = document.getElementById('gallery');
+let page = 1;
+async function fetchImages(pageNumber) {
+    const apiKey = 'IbF6-MRdhzl-uHDmzhST3z5-irUkOEiTRQSsunCDajk';
+    const url = `https://api.unsplash.com/search/photos?page=${pageNumber}&query=models&per_page=50&client_id=${apiKey}`;
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`API request failed with status: ${response.status}`);
+        }
+        const data = await response.json();
+        return data.results;
+    } catch (error) {
+        console.error("Error fetching images:", error);
+        return [];
+    }
+}
+async function loadImages(direction = 'next') {
+    gallery.innerHTML = ''; 
+    page = direction === 'next' ? page + 1 : Math.max(page - 1, 1);
+
+    const images = await fetchImages(page);
+
+    if (images.length === 0) {
+        gallery.innerHTML = `<p style="text-align:center; color:white;">No more images available. Please try another page.</p>`;
+        return;
+    }
+
+    images.forEach(image => {
+        const img = document.createElement('img');
+        img.src = image.urls.small;
+        img.alt = image.alt_description || 'Model Image';
+        gallery.appendChild(img);
+    });
+}
+loadImages();
+
+    </script>
+</body>
+</html>

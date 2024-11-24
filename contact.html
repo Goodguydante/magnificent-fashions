@@ -3,23 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Contact Us</title>
     <style>
-        body {
-    font-family: '', sans-serif;
+    * {
     margin: 0;
-    background-color: #121212;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #111;
     color: #fff;
+    line-height: 1.6;
+}
+        
+html{
+    scroll-behavior: smooth;
 }
 
 .hero-about {
     position: relative;
-    background: url('https://images.pexels.com/photos/15043366/pexels-photo-15043366/free-photo-of-grayscale-photo-of-a-pretty-woman-looking-sideways.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
-    height: 400px;
+    height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .hero-about .overlay {
@@ -32,144 +43,113 @@
 }
 
 .hero-about .hero-content {
-    z-index: 2;
+    z-index: 1;
 }
 
 .hero-about h1 {
     font-size: 48px;
-    color: #ffffff;
-    margin: 0;
+    margin-bottom: 10px;
 }
 
 .hero-about p {
     font-size: 18px;
-    color: #fff;
 }
 
 .contact-content {
-    padding: 60px 20px;
-    background-color: #121212;
-}
-
-.contact-content .container {
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #1c1c1c;
+    border-radius: 12px;
     text-align: center;
+    animation: ascend 1s ease-in-out forwards;
 }
 
 .contact-content h2 {
     font-size: 36px;
-    color: #ffffff;
     margin-bottom: 20px;
 }
 
 .contact-content p {
     font-size: 18px;
-    line-height: 1.6;
+    margin-bottom: 30px;
 }
 
 .contact-form {
-    margin-top: 30px;
     text-align: left;
 }
 
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    display: flex;
-    width: 100%;
-    padding: 0.8rem;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #333;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    background-color: #444;
-}
-
-
 .contact-form .form-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 1.5rem;
-}
+    margin-bottom: 20px;
+        }
 
 .contact-form label {
-    font-size: 16px;
-    color: #ffffff;
     display: block;
     margin-bottom: 8px;
+    font-size: 16px;
 }
 
 .contact-form input,
+.contact-form select,
 .contact-form textarea {
     width: 100%;
-    padding: 0.8rem;
-    font-size: 1rem;
-    border: 1px solid #444;
+    padding: 12px;
+    font-size: 16px;
     background-color: #2b2b2b;
     color: #fff;
+    border: 1px solid #444;
     border-radius: 5px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+    transition: 0.3s;
 }
 
 .contact-form input:focus,
+.contact-form select:focus,
 .contact-form textarea:focus {
-    outline: none;
-    border-color: #ffffff;
+    border-color: #fff;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #fff;
+    color: #111;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #444;
+    color: #fff;
 }
 
 .contact-info {
-    margin-top: 50px;
+    margin-top: 40px;
     text-align: left;
 }
 
 .contact-info h3 {
-    font-size: 28px;
-    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 15px;
 }
 
 .contact-info p {
-    width: 100%;
     font-size: 18px;
-    padding: 12px 1rem;
+    background-color: #fff;
     color: #111;
-    background-color: #ffffff;
-    border: none;
-    border-radius: 25px;
+    padding: 12px 15px;
+    border-radius: 20px;
+    margin-bottom: 15px;
 }
-
-.cta-button {
-    display: flex;
-    padding: 15px 30px;
-    color: #111;
-    background-color: #ffffff;
-    border: none;
-    border-radius: 30px;
-    text-decoration: none;
-    text-align: center;
-    align-items: center;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #ffffff;
-}
-
 
 footer {
     background-color: #111;
-    padding: 60px 20px;
+    padding: 40px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -189,6 +169,7 @@ footer {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 30px;
+    animation: ascend 1s ease-in-out forwards;
 }
 
 .schedule-call {
@@ -200,6 +181,7 @@ footer {
     font-size: 1.2rem;
     text-decoration: none;
     font-weight: bold;
+    animation: ascend 1s ease-in-out forwards;
     margin-bottom: 40px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -237,13 +219,21 @@ footer {
     color: #8f8f8f;
 }
 
-
-@media (max-width: 768px) {
-    .contact-form {
-        padding: 1.5rem;
+@keyframes ascend {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
+@media (max-width: 768px) {
+    .contact-content {
+    padding: 20px;}
+}
     </style>
 </head>
 <body>
@@ -256,57 +246,52 @@ footer {
     </header>
 
     <section class="contact-content">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <p>If you have any questions, suggestions, or inquiries, feel free to reach out. We'd love to connect with you!</p>
+        <h2>Get in Touch</h2>
+        <p>If you have any questions, suggestions, or inquiries, feel free to reach out. We'd love to connect with you!</p>
+        <div class="contact-form">
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="model-type">Model Type</label>
+                    <select id="model-type" name="model-type" required>
+                        <option value="" disabled selected>Select a model type</option>
+                        <option value="fashion">Fashion Model</option>
+                        <option value="runway">Runway Model</option>
+                        <option value="commercial">Commercial Model</option>
+                        <option value="plus-size">Plus-size Model</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Submit</button>
+            </form>
+        </div>
 
-            <div class="contact-form">
-                <form action="#" method="post">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="model-type">Model Type</label>
-                        <select id="model-type" name="model-type" required>
-                            <option value="" disabled selected>Select a model type</option>
-                            <option value="fashion">Fashion Model</option>
-                            <option value="runway">Runway Model</option>
-                            <option value="commercial">Commercial Model</option>
-                            <option value="plus-size">Plus-size Model</option>
-                        </select>
-                    </div>
-
-
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="cta-button">Submit Consultation Request</button>
-                </form>
-            </div>
-
-            <div class="contact-info">
-                <h3>Contact Information</h3>
-                <p>Email: info@magnificentfashion.com</p>
-                <p>Phone: +91 1800 559 4412</p>
-                <p>Address: Plot 123 Fashion St Bl no 91, New Delhi, india</p>
-            </div>
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p>Email: info@magnificentfashion.com</p>
+            <p>Phone: +91 1800 559 4412</p>
+            <p>Address: Plot 123 Fashion St, New Delhi, India</p>
         </div>
     </section>
 
     <footer>
         <div class="footer-card">
-            <h1>Let's create your next big Model.</h1>
-            <a href="blog1.html" class="schedule-call">Explore our blogs</a>
-            
+            <h1>Shape Your Path to Stardom With Us!</h1>
+            <a href="contact.html" class="schedule-call">Schedule a Call →</a>
             <nav class="footer-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
+                    <li><a href="blog1.html">Blog</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="terms.html">Terms</a></li>
